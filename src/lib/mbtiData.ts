@@ -33,16 +33,16 @@ export interface MbtiResult {
 export const questions: Question[] = [
   {
     id: 1,
-    text: "주식 앱을 여는 빈도는?",
+    text: "갑자기 뜬 종목 봤을 때",
     subtext: "솔직하게 답해주세요 👀",
     answers: [
       {
-        text: "5분마다 확인함. 화장실도 폰 들고 감",
+        text: "“야 이거 봤냐??” 단톡방에 바로 던짐",
         emoji: "📱",
         scores: { E: 2, P: 2 }
       },
       {
-        text: "하루에 한 번 장 마감 후에 봄",
+        text: "혼자 검색 30분 하고 아무 말 안 함",
         emoji: "😌",
         scores: { I: 2, J: 2 }
       }
@@ -50,188 +50,188 @@ export const questions: Question[] = [
   },
   {
     id: 2,
-    text: "종목 선택 기준은?",
-    subtext: "진짜 이유를 말해봐요",
+    text: "주식할 때 스타일",
+    subtext: "평소 모습에 더 가까운 건?",
     answers: [
       {
-        text: "차트 보고 기술적 분석으로 판단",
-        emoji: "📊",
-        scores: { S: 2, T: 2 }
+        text: "친구가 뭐 샀는지 겁나 궁금함",
+        emoji: "👀",
+        scores: { E: 2, F: 2 }
       },
       {
-        text: "커뮤니티에서 핫하다길래 샀음",
-        emoji: "🔥",
-        scores: { N: 2, F: 2 }
+        text: "내 계좌 절대 공개 안 함",
+        emoji: "🔒",
+        scores: { I: 2, T: 2 }
       }
     ]
   },
   {
     id: 3,
-    text: "주가가 -10% 됐을 때 당신의 반응은?",
-    subtext: "현실적으로 생각해봐요",
+    text: "물렸을 때",
+    subtext: "현실 반응 체크",
     answers: [
       {
-        text: "추가매수! 더 싸게 살 기회잖아?",
-        emoji: "💪",
-        scores: { J: 2, T: 2 }
+        text: "“나 이거 물렸다 ㅋㅋ” 하면서 같이 고통 나눔",
+        emoji: "😂",
+        scores: { E: 2, F: 2 }
       },
       {
-        text: "손절하고 다른 종목 찾아봄",
-        emoji: "✂️",
-        scores: { P: 2, S: 2 }
+        text: "아무도 모르게 혼자 고통 받음",
+        emoji: "😶",
+        scores: { I: 2, T: 2 }
       }
     ]
   },
   {
     id: 4,
-    text: "투자 정보는 주로 어디서 얻나요?",
-    subtext: "가장 많이 보는 곳",
+    text: "갑자기 급등한 종목 보면",
+    subtext: "첫 반응은?",
     answers: [
       {
-        text: "재무제표, 공시, 애널리스트 리포트",
-        emoji: "📋",
-        scores: { S: 2, T: 2 }
-      },
-      {
-        text: "유튜브, 카카오톡 오픈채팅, 종토방",
-        emoji: "💬",
-        scores: { N: 2, F: 2 }
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "목표 수익률을 정하고 투자하나요?",
-    subtext: "계획형 vs 즉흥형",
-    answers: [
-      {
-        text: "네, 목표가 되면 무조건 팜",
-        emoji: "🎯",
-        scores: { J: 2, T: 2 }
-      },
-      {
-        text: "더 오를 것 같으면 그냥 들고 있음",
-        emoji: "🤔",
-        scores: { P: 2, N: 2 }
-      }
-    ]
-  },
-  {
-    id: 6,
-    text: "주변 지인에게 종목 추천을 하나요?",
-    subtext: "책임감 있게 답해주세요",
-    answers: [
-      {
-        text: "당연하죠! 좋은 거 같이 벌어야죠",
-        emoji: "🤝",
-        scores: { E: 2, F: 2 }
-      },
-      {
-        text: "절대 안 함. 내 계좌도 모르는데",
-        emoji: "🤐",
-        scores: { I: 2, T: 2 }
-      }
-    ]
-  },
-  {
-    id: 7,
-    text: "주식 얘기를 꺼내는 상황은?",
-    subtext: "솔직한 당신의 모습",
-    answers: [
-      {
-        text: "밥 먹다가도, 자다가도 생각남",
-        emoji: "💭",
-        scores: { E: 2, N: 2 }
-      },
-      {
-        text: "물어보는 사람한테만 조용히 말함",
-        emoji: "🤫",
-        scores: { I: 2, S: 2 }
-      }
-    ]
-  },
-  {
-    id: 8,
-    text: "손실 중인 종목을 얼마나 버티나요?",
-    subtext: "멘탈 테스트",
-    answers: [
-      {
-        text: "원금 회복할 때까지 존버함",
-        emoji: "🏔️",
-        scores: { J: 2, F: 2 }
-      },
-      {
-        text: "일정 % 이상 손실나면 칼손절",
-        emoji: "⚡",
-        scores: { T: 2, P: 2 }
-      }
-    ]
-  },
-  {
-    id: 9,
-    text: "투자 포트폴리오 구성은?",
-    subtext: "현재 상태 기준",
-    answers: [
-      {
-        text: "한 종목에 올인! 분산은 수익률 분산",
-        emoji: "🎰",
-        scores: { N: 2, P: 2 }
-      },
-      {
-        text: "여러 종목에 분산해서 리스크 관리",
-        emoji: "🗂️",
-        scores: { S: 2, J: 2 }
-      }
-    ]
-  },
-  {
-    id: 10,
-    text: "주식 수익이 났을 때 당신은?",
-    subtext: "기쁨을 어떻게 표현하나요",
-    answers: [
-      {
-        text: "바로 SNS에 인증샷 올림 📸",
-        emoji: "🎉",
-        scores: { E: 2, F: 2 }
-      },
-      {
-        text: "혼자 조용히 기뻐하고 재투자",
-        emoji: "😏",
-        scores: { I: 2, T: 2 }
-      }
-    ]
-  },
-  {
-    id: 11,
-    text: "테마주, 급등주 소식을 들으면?",
-    subtext: "첫 번째 반응",
-    answers: [
-      {
-        text: "일단 매수부터! 이유는 나중에",
+        text: "이거 시작이다… 이제 10배 간다",
         emoji: "🚀",
         scores: { N: 2, P: 2 }
       },
       {
-        text: "왜 올랐는지 먼저 분석하고 판단",
+        text: "왜 오른거지? 이유부터 찾아봄",
         emoji: "🔍",
         scores: { S: 2, T: 2 }
       }
     ]
   },
   {
-    id: 12,
-    text: "투자 스타일을 한 마디로?",
-    subtext: "가장 가까운 것 선택",
+    id: 5,
+    text: "적자 기업인데 핫할 때",
+    subtext: "투자 판단 기준",
     answers: [
       {
-        text: "단기 수익 극대화! 빠르게 먹고 나옴",
-        emoji: "⚡",
-        scores: { P: 2, S: 2 }
+        text: "지금은 적자지, 나중엔 다 먹는다",
+        emoji: "🔥",
+        scores: { N: 2, F: 2 }
       },
       {
-        text: "장기 투자! 10년 뒤를 본다",
-        emoji: "🌱",
-        scores: { J: 2, N: 2 }
+        text: "지금 돈 못 버는데 왜 사…",
+        emoji: "📉",
+        scores: { S: 2, T: 2 }
+      }
+    ]
+  },
+  {
+    id: 6,
+    text: "친구가 '이거 무조건 간다' 했을 때",
+    subtext: "당신의 반응",
+    answers: [
+      {
+        text: "“뭔가 있네?” 하고 같이 상상 시작",
+        emoji: "🤝",
+        scores: { E: 2, N: 2 }
+      },
+      {
+        text: "“근거 뭐냐”부터 물어봄",
+        emoji: "❓",
+        scores: { T: 2, S: 2 }
+      }
+    ]
+  },
+  {
+    id: 7,
+    text: "기업 선택 기준",
+    subtext: "더 중요한 건?",
+    answers: [
+      {
+        text: "숫자 좋으면 끝",
+        emoji: "📊",
+        scores: { T: 2, S: 2 }
+      },
+      {
+        text: "뭔가 이미지 좋고 정감 가야 됨",
+        emoji: "💖",
+        scores: { F: 2, N: 2 }
+      }
+    ]
+  },
+  {
+    id: 8,
+    text: "오래 들고 있던 종목이 -20% 찍었을 때",
+    subtext: "결정의 순간",
+    answers: [
+      {
+        text: "기준 깨지면 미련 없이 판다",
+        emoji: "✂️",
+        scores: { T: 2, J: 2 }
+      },
+      {
+        text: "오래 들었는데… 쉽게 못 판다",
+        emoji: "😢",
+        scores: { F: 2, P: 2 }
+      }
+    ]
+  },
+  {
+    id: 9,
+    text: "내가 산 주식 욕먹는 글 봤을 때",
+    subtext: "멘탈 반응",
+    answers: [
+      {
+        text: "“논리적으로 틀린 말이네” 반박 포인트 찾음",
+        emoji: "🧠",
+        scores: { T: 2, S: 2 }
+      },
+      {
+        text: "“괜히 기분 나쁘네…” 일단 마음 상함",
+        emoji: "😠",
+        scores: { F: 2, I: 2 }
+      }
+    ]
+  },
+  {
+    id: 10,
+    text: "이름 끌리는 종목 발견",
+    subtext: "당신의 선택은?",
+    answers: [
+      {
+        text: "“이름 왤케 간지냐” 바로 소액 매수",
+        emoji: "😎",
+        scores: { N: 2, P: 2 }
+      },
+      {
+        text: "재무제표, 뉴스 다 뒤지고 들어감",
+        emoji: "📚",
+        scores: { S: 2, J: 2 }
+      }
+    ]
+  },
+  {
+    id: 11,
+    text: "매수 타이밍",
+    subtext: "스타일 체크",
+    answers: [
+      {
+        text: "“지금 느낌 좋다” 바로 들어감",
+        emoji: "⚡",
+        scores: { P: 2, N: 2 }
+      },
+      {
+        text: "정해둔 가격 오면 산다",
+        emoji: "🎯",
+        scores: { J: 2, T: 2 }
+      }
+    ]
+  },
+  {
+    id: 12,
+    text: "계좌 관리 스타일",
+    subtext: "현실적인 습관",
+    answers: [
+      {
+        text: "올랐나… 수시로 계속 확인",
+        emoji: "📱",
+        scores: { E: 2, P: 2 }
+      },
+      {
+        text: "정해진 날에만 체크",
+        emoji: "📅",
+        scores: { I: 2, J: 2 }
       }
     ]
   }
