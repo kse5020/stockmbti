@@ -118,7 +118,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="headline-font text-5xl md:text-7xl lg:text-8xl text-[#FFE500] mb-4 leading-tight neon-yellow"
+            className="headline-font text-5xl text-[#FFE500] mb-4 leading-tight neon-yellow"
           >
             주식 MBTI
           </motion.h1>
@@ -127,7 +127,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/80 mb-2 font-bold"
+            className="text-xl text-white/80 mb-2 font-bold"
           >
             나는 어떤 투자자인가?
           </motion.p>
@@ -136,7 +136,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base md:text-lg text-white/50 mb-10"
+            className="text-base text-white/50 mb-10"
           >
             단타충? 존버러? 희망회로? 지금 바로 알아보세요 🔍
           </motion.p>
@@ -146,11 +146,11 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 200 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col gap-4 justify-center items-center"
           >
             <button
               onClick={() => navigate("/quiz")}
-              className="stock-btn-primary px-10 py-5 text-xl rounded-lg w-full sm:w-auto"
+              className="stock-btn-primary px-10 py-5 text-xl rounded-lg w-full"
             >
               📊 테스트 시작하기
             </button>
@@ -189,7 +189,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      
+
       {/* 푸터 */}
       <footer className="py-8 px-4 bg-[#070A1A] text-center text-white/30 text-sm">
         <p>주식 MBTI는 재미를 위한 테스트입니다. </p>

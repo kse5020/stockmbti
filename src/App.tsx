@@ -8,6 +8,10 @@ import Home from "./pages/Home";
 import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 
+const kakaoBannerStyle = {
+  display: "none",
+};
+
 function Router() {
   return (
     <Switch>
@@ -26,7 +30,14 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className="min-h-screen bg-black flex justify-center">
+            <div className="w-full max-w-[430px] min-h-screen relative overflow-x-hidden">
+              <ins className="kakao_ad_area" style={kakaoBannerStyle} data-ad-unit="DAN-av7OGNb0wT6WBC5J"
+                data-ad-width="320"
+                data-ad-height="50"></ins>
+              <Router />
+            </div>
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

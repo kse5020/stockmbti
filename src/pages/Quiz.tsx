@@ -57,8 +57,8 @@ export default function Quiz() {
           const mbtiType = calculateMbtiType(newScores);
           navigate(`/result/${mbtiType}`);
         }
-      }, 300);
-    }, 400);
+      }, 120);
+    }, 50);
   };
 
   const handleBack = () => {
@@ -71,17 +71,16 @@ export default function Quiz() {
 
   return (
     <div
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col relative"
       style={{
         background: "#0A0E27",
         backgroundImage: `url(${QUIZ_BG})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
       }}
     >
       {/* 오버레이 */}
-      <div className="fixed inset-0 bg-[#0A0E27]/85 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#0A0E27]/85 pointer-events-none" />
 
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* 헤더 */}
@@ -140,7 +139,7 @@ export default function Quiz() {
                 </div>
 
                 {/* 질문 텍스트 */}
-                <h2 className="text-2xl md:text-3xl text-white mb-8 leading-tight">
+                <h2 className="text-2xl text-white mb-8 leading-tight">
                   {question.text}
                 </h2>
 
@@ -161,7 +160,7 @@ export default function Quiz() {
 
                       {/* 텍스트 */}
                       <div className="flex-1">
-                        <p className={`text-base md:text-lg font-medium leading-snug ${
+                        <p className={`text-base font-medium leading-snug ${
                           selectedAnswer === i ? "text-[#FFE500]" : "text-white"
                         }`}>
                           {answer.text}
