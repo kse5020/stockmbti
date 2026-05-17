@@ -415,7 +415,6 @@ export default function Result() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleShare}
                 className="stock-btn-primary flex-1 py-3 text-base rounded-xl shadow-lg"
-                style={{ fontFamily: "'Black Han Sans', sans-serif" }}
               >
                 📤 친구한테 공유하기
               </motion.button>
@@ -424,7 +423,6 @@ export default function Result() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleSaveImage}
                 className="stock-btn-secondary flex-1 py-3 text-base rounded-xl shadow-lg"
-                style={{ fontFamily: "'Black Han Sans', sans-serif" }}
               >
                 🖼️ 이미지 저장
               </motion.button>
