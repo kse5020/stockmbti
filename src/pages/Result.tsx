@@ -5,8 +5,9 @@
 
 import { useParams, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { mbtiResults } from "@/lib/mbtiData";
+import { toPng } from "html-to-image";
 
 interface Particle {
   id: number;
@@ -65,6 +66,7 @@ export default function Result() {
   const [, navigate] = useLocation();
   const [showConfetti, setShowConfetti] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const captureRef = useRef<HTMLDivElement>(null);
 
   const type = params.type?.toUpperCase() || "ESTJ";
   const result = mbtiResults[type] || mbtiResults["ESTJ"];
@@ -78,19 +80,28 @@ export default function Result() {
   }, []);
 
   const handleShare = () => {
-    const text = `나의 주식 MBTI는 ${result.type} "${result.title}" ${result.emoji}\n${result.subtitle}\n\n주식 MBTI 테스트 해보기 👇`;
+    const url = window.location.href;
     if (navigator.share) {
-      navigator.share({ title: "주식 MBTI", text });
+      navigator.share({ title: "주식 MBTI", url });
     } else if (navigator.clipboard) {
-      navigator.clipboard.writeText(text + "\n" + window.location.origin);
-      alert("클립보드에 복사됐어요! 친구한테 공유해보세요 📤");
+      navigator.clipboard.writeText(url);
+      alert("링크가 복사됐어요! 친구한테 공유해보세요 📤");
     }
+  };
+
+  const handleSaveImage = async () => {
+    if (!captureRef.current) return;
+    const dataUrl = await toPng(captureRef.current, { pixelRatio: 2, backgroundColor: "#0A0E27" });
+    const link = document.createElement("a");
+    link.download = `주식MBTI_${result.type}.png`;
+    link.href = dataUrl;
+    link.click();
   };
 
   const memeLines = result.memeText.split("\n").filter((line) => line.trim());
 
   return (
-    <div className="h-screen w-screen bg-[#0A0E27] relative overflow-hidden flex flex-col">
+    <div className="min-h-screen w-full bg-[#0A0E27] relative flex flex-col">
       {/* 애니메이션 배경 */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <motion.div
@@ -155,6 +166,7 @@ export default function Result() {
 
         {revealed && (
           <motion.div
+            ref={captureRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -182,18 +194,18 @@ export default function Result() {
               >
                 당신의 주식 MBTI
               </motion.div>
-              <motion.h1
+              <motion.h4
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="headline-font text-8xl mb-4 leading-none"
+                className="headline-font text-6xl mb-4 leading-none whitespace-pre-line"
                 style={{
                   color: result.color,
                   textShadow: `0 0 40px ${result.color}80, 0 0 80px ${result.color}40`,
                 }}
               >
                 {result.title}
-              </motion.h1>
+              </motion.h4>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -410,11 +422,11 @@ export default function Result() {
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => navigate("/quiz")}
+                onClick={handleSaveImage}
                 className="stock-btn-secondary flex-1 py-3 text-base rounded-xl shadow-lg"
                 style={{ fontFamily: "'Black Han Sans', sans-serif" }}
               >
-                🔄 다시 테스트하기
+                🖼️ 이미지 저장
               </motion.button>
             </motion.div>
 
