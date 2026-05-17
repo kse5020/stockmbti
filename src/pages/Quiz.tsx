@@ -152,12 +152,12 @@ export default function Quiz() {
                       onClick={() => handleAnswer(i)}
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
-                      className={`answer-card w-full text-left p-5 rounded-xl flex items-start gap-4 ${
+                      className={`answer-card w-full text-left p-5 rounded-xl flex items-center gap-4 ${
                         selectedAnswer === i ? "selected" : ""
                       }`}
                     >
                       {/* 이모지 */}
-                      <span className="text-3xl flex-shrink-0 mt-0.5">{answer.emoji}</span>
+                      <span className="text-3xl flex-shrink-0">{answer.emoji}</span>
 
                       {/* 텍스트 */}
                       <div className="flex-1">
@@ -169,7 +169,7 @@ export default function Quiz() {
                       </div>
 
                       {/* 선택 표시 */}
-                      <div className={`w-6 h-6 rounded-full border-2 flex-shrink-0 mt-0.5 transition-all ${
+                      <div className={`w-6 h-6 rounded-full border-2 flex-shrink-0 transition-all ${
                         selectedAnswer === i
                           ? "border-[#FFE500] bg-[#FFE500]"
                           : "border-white/20"
@@ -202,10 +202,7 @@ export default function Quiz() {
           </div>
         </main>
 
-        {/* 하단 밈 텍스트 */}
-        <div className="px-4 py-4 text-center text-white/20 text-xs ticker-text">
-          솔직하게 답할수록 정확한 결과가 나옵니다 (아마도)
-        </div>
+        
       </div>
     </div>
   );

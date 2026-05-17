@@ -15,13 +15,13 @@ const BEAR_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463985934/QaX
 
 // 실시간 주가 티커 데이터 (가짜)
 const tickerData = [
-  { symbol: "삼성전자", price: "71,400", change: "+1.2%", up: true },
-  { symbol: "카카오", price: "38,250", change: "-0.8%", up: false },
+  { symbol: "삼성전자", price: "501,400", change: "+1.2%", up: true },
+  { symbol: "카카오", price: "308,250", change: "-0.8%", up: false },
   { symbol: "NAVER", price: "182,500", change: "+2.1%", up: true },
-  { symbol: "현대차", price: "215,000", change: "+0.5%", up: true },
-  { symbol: "SK하이닉스", price: "168,000", change: "-1.4%", up: false },
-  { symbol: "LG에너지솔루션", price: "312,000", change: "+3.2%", up: true },
-  { symbol: "셀트리온", price: "156,500", change: "-2.1%", up: false },
+  { symbol: "현대차", price: "915,000", change: "+0.5%", up: true },
+  { symbol: "SK하이닉스", price: "2,168,000", change: "-1.4%", up: false },
+  { symbol: "LG에너지솔루션", price: "912,000", change: "+3.2%", up: true },
+  { symbol: "셀트리온", price: "556,500", change: "-2.1%", up: false },
   { symbol: "POSCO홀딩스", price: "312,000", change: "+0.9%", up: true },
 ];
 
@@ -44,7 +44,8 @@ const memeTexts = [
   "💸 수수료만 벌었습니다",
   "🚀 달나라 가는 중...",
   "😭 손절은 배신이다",
-  "🎰 올인 각 나왔다",
+  "🎰 그때 살껄",
+  "🤣 라고할때 살껄",
 ];
 
 export default function Home() {
@@ -86,7 +87,7 @@ export default function Home() {
       </div>
 
       {/* 히어로 섹션 */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 dot-pattern">
+      <section className="relative min-h-[calc(100vh-150px)] flex flex-col items-center justify-center px-4 py-10 dot-pattern">
         {/* 배경 이미지 */}
         <div
           className="absolute inset-0 opacity-20"
@@ -153,7 +154,7 @@ export default function Home() {
             >
               📊 테스트 시작하기
             </button>
-            <div className="text-white/40 text-sm ticker-text">
+            <div className="text-white/40 text-sm text-base">
               약 3분 소요 · 12문항
             </div>
           </motion.div>
@@ -188,133 +189,12 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* 유형 미리보기 섹션 */}
-      <section className="py-20 px-4 bg-[#0D1230]">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="headline-font text-3xl md:text-5xl text-[#FFE500] mb-3">
-              총 16가지 투자자 유형
-            </h2>
-            <p className="text-white/60">당신은 어떤 유형일까요?</p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {typePreview.map((type, i) => (
-              <motion.div
-                key={type.type}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="bg-[#14183A] border border-white/10 rounded-xl p-4 text-center hover:border-[#FFE500]/50 transition-all hover:-translate-y-1 cursor-default"
-              >
-                <div className="text-3xl mb-2">{type.emoji}</div>
-                <div
-                  className="headline-font text-lg mb-1"
-                  style={{ color: type.color }}
-                >
-                  {type.type}
-                </div>
-                <div className="text-white/60 text-xs">{type.title}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 특징 섹션 */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="headline-font text-3xl md:text-4xl text-white mb-3">
-              이런 분들께 추천합니다 👇
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                emoji: "😭",
-                title: "또 물렸어요",
-                desc: "왜 나만 사면 떨어지는지 궁금한 분",
-                color: "#FF4444",
-              },
-              {
-                emoji: "🤔",
-                title: "나 단타형인가?",
-                desc: "내 투자 스타일이 뭔지 모르겠는 분",
-                color: "#FFE500",
-              },
-              {
-                emoji: "📤",
-                title: "공유하고 싶어요",
-                desc: "친구한테 자랑하고 싶은 분",
-                color: "#22c55e",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-[#14183A] border-2 rounded-xl p-6 text-center"
-                style={{ borderColor: item.color + "40" }}
-              >
-                <div className="text-4xl mb-3">{item.emoji}</div>
-                <h3
-                  className="headline-font text-xl mb-2"
-                  style={{ color: item.color }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-white/60 text-sm">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 하단 CTA */}
-      <section className="py-20 px-4 bg-[#FFE500] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url(${HERO_IMAGE})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="relative z-10 text-center max-w-2xl mx-auto">
-          <h2 className="headline-font text-4xl md:text-5xl text-[#0A0E27] mb-4">
-            지금 바로 확인하세요!
-          </h2>
-          <p className="text-[#0A0E27]/70 mb-8 text-lg">
-            12문항 · 약 3분 · 완전 무료
-          </p>
-          <button
-            onClick={() => navigate("/quiz")}
-            className="bg-[#0A0E27] text-[#FFE500] headline-font text-xl px-12 py-5 rounded-lg border-4 border-[#0A0E27] shadow-[6px_6px_0px_#0A0E27] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_#0A0E27] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#0A0E27] transition-all"
-          >
-            📊 테스트 시작하기
-          </button>
-        </div>
-      </section>
-
+      
       {/* 푸터 */}
       <footer className="py-8 px-4 bg-[#070A1A] text-center text-white/30 text-sm">
-        <p>주식 MBTI는 재미를 위한 테스트입니다. 실제 투자 조언이 아닙니다.</p>
-        <p className="mt-1">투자의 책임은 본인에게 있습니다 📉</p>
+        <p>주식 MBTI는 재미를 위한 테스트입니다. </p>
+        <p>실제 투자 조언이 아닙니다.</p><br/>
+        <p className="mt-1 font-bold">투자의 책임은 본인에게 있습니다 📉</p>
       </footer>
 
       <style>{`
